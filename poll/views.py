@@ -1,15 +1,21 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
 # Create your views here.
+from django.template import loader
+
 from poll.models import Question
 
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
-    output = ([q.question_text for q in latest_question_list])
-    return HttpResponse(output)
+    template = loader.get_template('poll/index.html')
+    context = {
+        'latest_question_list': latest_question_list
+    }
+    # formatted_date = ([print(q.question_text) for q in latest_questions])
+    print(latest_question_list)
+    return HttpResponse(template.render(context, request))
 
 
 def detail(request, question_id):
