@@ -21,6 +21,7 @@ def detail(request, question_id):
     try:
         question = Question.objects.get(pk=question_id)
     except Question.DoesNotExist:
+        return render(request, 'poll/404.html', {'error': 'There is no question with this id'})
         raise Http404("Question doesn't exist")
     return render(request, 'poll/detail.html', {'question': question})
 
