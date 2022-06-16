@@ -7,7 +7,11 @@
 <body>
     <div class="question_detail">
         <h3>{{ question }}</h3>
-{#        <h2>{{ exception }}</h2>#}
+        <ul>
+            {% for choice in question.choice_set.all %}
+                <li>{{ choice.choice_text }}</li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
