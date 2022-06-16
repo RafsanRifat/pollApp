@@ -12,212 +12,95 @@
 </head>
 <body>
 <style>
-    .container{
+    .container {
         display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
     }
-    @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans') main height
 
-    :
+    @import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
 
-    100
-    vh
-    width:
+    .main-item{
+        height: 100vh;
+	width: 100vw;
+	background: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Merriweather Sans', sans-serif;
+    }
 
-    100
-    vw
-    background: #fff
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    font-family:
+	#errorText{
+        font-size: 22px;
+		margin: 14px 0;
+    }
 
-    'Merriweather Sans'
-    ,
-    sans-serif
-    #errorText
-    font-size:
+	#errorLink{
+        font-size: 20px;
+		padding: 12px;
+		border: 1px solid;
+		color: #000;
+		{#background-color: transparent;#}
+		text-decoration: none;
+		{#transition: all 0.5s ease-in-out;#}
 
-    22
-    px
-    margin:
+    }
+    #errorLink :hover{
+        color: #fff;
+			background: #000;
+    }
 
-    14
-    px
 
-    0
-    #errorLink
-    font-size:
+	#g6219{
+        transform-origin: 85px 4px ;
+		animation: an1 12s .5s infinite ease-out;
+    }
 
-    20
-    px
-    padding:
+@keyframes an1{
+    0% {
+        transform: rotate(0)
+    }
+	5% {
+        transform: rotate(3deg)
+    }
+	15% {
+        transform: rotate(-2.5deg)
+    }
+	25% {
+        transform: rotate(2deg)
+    }
+	35% {
+        transform: rotate(-1.5deg)
+    }
+	45% {
+        transform: rotate(1deg)
+    }
+	55% {
+        transform: rotate(-1.5deg)
+    }
+	65% {
+        transform: rotate(2deg)
+    }
+	75% {
+        transform: rotate(-2deg)
+    }
+	85% {
+        transform: rotate(2.5deg)
+    }
+	95% {
+        transform: rotate(-3deg)
+    }
+	100% {
+        transform: rotate(0)
+    }
+}
 
-    12
-    px
-    border:
-
-    1
-    px solid
-    color: #000
-    background-color: transparent
-    text-decoration: none
-    transition: all
-
-    0.5
-    s ease-in-out
-		& :hover,
-
-    &
-    :active
-    color: #fff
-    background: #000
-    #g6219
-    transform-origin:
-
-    85
-    px
-
-    4
-    px
-    animation: an1
-
-    12
-    s
-
-    .5
-    s infinite ease-out
-
-    @keyframes an1
-
-    0
-    %
-    transform:
-
-    rotate
-    (
-    0
-    )
-    5
-    %
-    transform:
-
-    rotate
-    (
-    3
-    deg
-
-    )
-    15
-    %
-    transform:
-
-    rotate
-    (
-    -
-    2.5
-    deg
-
-    )
-    25
-    %
-    transform:
-
-    rotate
-    (
-    2
-    deg
-
-    )
-    35
-    %
-    transform:
-
-    rotate
-    (
-    -
-    1.5
-    deg
-
-    )
-    45
-    %
-    transform:
-
-    rotate
-    (
-    1
-    deg
-
-    )
-    55
-    %
-    transform:
-
-    rotate
-    (
-    -
-    1.5
-    deg
-
-    )
-    65
-    %
-    transform:
-
-    rotate
-    (
-    2
-    deg
-
-    )
-    75
-    %
-    transform:
-
-    rotate
-    (
-    -
-    2
-    deg
-
-    )
-    85
-    %
-    transform:
-
-    rotate
-    (
-    2.5
-    deg
-
-    )
-    95
-    %
-    transform:
-
-    rotate
-    (
-    -
-    3
-    deg
-
-    )
-    100
-    %
-    transform:
-
-    rotate
-    (
-    0
-    )
 </style>
 
 <div class="container">
-    <main>
+    <main class="main-item">
         <svg
                 viewBox="0 0 541.17206 328.45184"
                 height="328.45184"
@@ -423,8 +306,10 @@
             </g>
         </svg>
 
-        <p id="errorText">Question Doesn't exist !!!</p>
-        <a id="errorLink" href="{% url 'index' %}">Go Home</a>
+        <div class="text-center mt-5">
+            <p class="text-center" id="errorText"><b>Question Doesn't exist !!!</b></p>
+            <a class="btn btn-outline-dark " id="" href="{% url 'index' %}">Go Home</a>
+        </div>
     </main>
     </main>
 </div>
